@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ticTacToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="632" Width="610" MouseDoubleClick="Window_MouseDoubleClick">
-    <Grid HorizontalAlignment="Stretch" Height="600"  Margin="0,0,0,0" VerticalAlignment="Stretch" Width="600" ShowGridLines="True">
+        Title="MainWindow" Height="700" Width="610" MouseDoubleClick="Window_MouseDoubleClick">
+    <Grid HorizontalAlignment="Center" Background="Black" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="600">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textblock1_1" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch"   FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" MouseLeftButtonDown="textblock1_1_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock1_1" HorizontalAlignment="Stretch" Margin="1,1,1,1" VerticalAlignment="Stretch"  FontSize="150"  FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" MouseLeftButtonDown="textblock1_1_MouseLeftButtonDown" Grid.Row="1">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -26,7 +27,7 @@
             </TextBlock.Background>
         </TextBlock>
 
-        <TextBlock x:Name="textblock1_2" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch"  FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200"  Grid.Column="1" MouseLeftButtonDown="textblock1_2_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock1_2" HorizontalAlignment="Stretch" Margin="1,1,1,1" Text="" VerticalAlignment="Stretch"  FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200"  Grid.Column="1" Grid.Row="1" Grid.MouseLeftButtonDown="textblock1_2_MouseLeftButtonDown" >
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -34,7 +35,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock1_3" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="0,0,0,0" MouseLeftButtonDown="textblock1_3_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock1_3" HorizontalAlignment="Stretch" Text="" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="1,1,1,1" MouseLeftButtonDown="textblock1_3_MouseLeftButtonDown" Grid.Row="1">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -42,7 +43,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock2_1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="0,0,0,0" Grid.Row="1" MouseLeftButtonDown="textblock2_1_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock2_1" HorizontalAlignment="Stretch"  Text="" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="1,1,1,1" Grid.Row="2" Grid.Column="0" MouseLeftButtonDown="textblock2_1_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -50,7 +51,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock3_1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="0,0,0,0" Grid.Row="2" MouseLeftButtonDown="textblock3_1_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock3_1" HorizontalAlignment="Stretch" Text="" VerticalAlignment="Center" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="1,1,1,1" Grid.Row="3" MouseLeftButtonDown="textblock3_1_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -58,7 +59,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock3_2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" MouseLeftButtonDown="textblock3_2_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock3_2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Margin="1,1,1,1" Grid.Row="3" Grid.Column="1" MouseLeftButtonDown="textblock3_2_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -66,7 +67,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock3_3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="0,0,0,0" Grid.Row="2" MouseLeftButtonDown="textblock3_3_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock3_3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="1,1,1,1" Grid.Row="3" MouseLeftButtonDown="textblock3_3_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -74,7 +75,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock2_3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="0,0,0,0" Grid.Row="1" MouseLeftButtonDown="textblock2_3_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock2_3" HorizontalAlignment="Stretch" Text="" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="2" Margin="1,1,1,1" Grid.Row="2" MouseLeftButtonDown="textblock2_3_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -82,7 +83,7 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textblock2_2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="200" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" MouseLeftButtonDown="textblock2_2_MouseLeftButtonDown">
+        <TextBlock x:Name="textblock2_2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200" Grid.Column="1" Margin="1,1,1,1" Grid.Row="2" MouseLeftButtonDown="textblock2_2_MouseLeftButtonDown">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Gray" Offset="1"/>
@@ -90,6 +91,11 @@
                 </RadialGradientBrush>
             </TextBlock.Background>
         </TextBlock>
+        <Button x:Name="button" Content="New game" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="30" FontWeight="Bold"  Background="Red" FontFamily="Sitka Small" FontStyle="Italic" Click="button_Click" />
+        <TextBox x:Name="textBox" Text=""  TextAlignment="Center"  Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="29.333" IsReadOnly="True" MaxLines="1" Background="#FFF7D125" />
+
     </Grid>
+
+
 
 </Window>

@@ -105,7 +105,8 @@ namespace ticTacToe
         Matrix m = new Matrix();
         Player p = new Player();
         Brush Color;
-        TextBlock[] ArrayOfBlocks = null; 
+        TextBlock[] ArrayOfBlocks = null;
+       
 
         public MainWindow()
         {
@@ -113,7 +114,7 @@ namespace ticTacToe
             ArrayOfBlocks = new[] {textblock1_1, textblock1_2, textblock1_3,
                                     textblock2_1, textblock2_2, textblock2_3,
                                     textblock3_1, textblock3_2, textblock3_3};
-
+            textBox.Text = "Na redu je: " + p.Who().ToUpper();
 
         }
 
@@ -123,28 +124,38 @@ namespace ticTacToe
             {
                 m.set(i, j, p.Who());
                 ArrayOfBlocks[3*i + j].Text = p.Who();
-                
+
                 Color = textblock1_1.Background;
 
                 if (m.IsWin(i, j))
                 {
                     ArrayOfBlocks[3*i + j].Background = Brushes.Yellow;
+                    textBox.Text = "Pobijedio je: " + p.Who().ToUpper();
+                    return;
                 }
 
                 p.ChangePlayer();
+                textBox.Text = "Na redu je: " + p.Who().ToUpper();
+            }
+        }
+
+        private void Reset()
+        {
+            p.Reset();
+            m.Reset();
+            textBox.Text = "Na redu je: " + p.Who().ToUpper();
+
+            foreach (var x in ArrayOfBlocks)
+            {
+                x.Text = ""; x.Background = Color;
             }
         }
 
         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            p.Reset();
-            m.Reset();
-
-            foreach(var x in ArrayOfBlocks )
-            {
-                x.Text = ""; x.Background = Color;
-            }
+            Reset();
         }
+
 
         private void textblock1_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -191,6 +202,11 @@ namespace ticTacToe
         private void textblock3_3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MouseLeftButtonDownFor_i_j(2, 2);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Reset();
         }
     }
 }
