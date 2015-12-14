@@ -28,7 +28,7 @@
         <local:Cell x:Name="textblock1_3" Grid.Column="2" MouseLeftButtonDown="textblock1_3_MouseLeftButtonDown" Grid.Row="1">
         </local:Cell>
         
-        <local:Cell x:Name="textblock2_1" Margin="1,1,1,1" Grid.Row="2" Grid.Column="0" MouseLeftButtonDown="textblock2_1_MouseLeftButtonDown">
+        <local:Cell x:Name="textblock2_1" Grid.Row="2" Grid.Column="0" MouseLeftButtonDown="textblock2_1_MouseLeftButtonDown">
         </local:Cell>
         
         <local:Cell x:Name="textblock3_1" Grid.Row="3" MouseLeftButtonDown="textblock3_1_MouseLeftButtonDown">

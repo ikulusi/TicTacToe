@@ -5,15 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ticTacToe"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TextBlock x:Name="TextHolder" HorizontalAlignment="Stretch" Margin="1,1,1,1" Text="" VerticalAlignment="Stretch"  FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200">
-            <TextBlock.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="Gray" Offset="1"/>
-                    <GradientStop Color="#FF37910D" Offset="0.533"/>
-                </RadialGradientBrush>
-            </TextBlock.Background>
-        </TextBlock>
-    </Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             Margin="1,1,1,1">
+
+    <UserControl.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="Gray" Offset="1"/>
+            <GradientStop Color="#FF37910D" Offset="0.533"/>
+        </RadialGradientBrush>
+    </UserControl.Background>
+
+    <TextBlock x:Name="TextHolder" HorizontalAlignment="Stretch" Margin="1,1,1,1" Text="" VerticalAlignment="Stretch"  FontSize="150" FontFamily="Showcard Gothic" TextAlignment="Center" LineHeight="200"
+                   />
 </UserControl>
