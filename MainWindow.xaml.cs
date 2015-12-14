@@ -6,11 +6,6 @@ using ticTacToe.Logic;
 
 namespace ticTacToe
 {
-    
-
-
-    
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -20,8 +15,8 @@ namespace ticTacToe
         Logic.Matrix m = new Logic.Matrix();
         Player p = new Player();
         Brush Color;
-        TextBlock[] ArrayOfBlocks = null;
-       
+        Cell[] ArrayOfBlocks = null;
+
 
         public MainWindow()
         {
@@ -29,7 +24,7 @@ namespace ticTacToe
             ArrayOfBlocks = new[] {textblock1_1, textblock1_2, textblock1_3,
                                     textblock2_1, textblock2_2, textblock2_3,
                                     textblock3_1, textblock3_2, textblock3_3};
-            textBox.Text = "Na redu je: " + p.Who().ToUpper();
+            textBox.Text = "Na redu je: " + p.WhoString().ToUpper();
 
         }
 
@@ -37,20 +32,20 @@ namespace ticTacToe
         {
             if (m.element(i, j) == 0 && !m.HasSomebodyWon())
             {
-                m.set(i, j, p.Who());
-                ArrayOfBlocks[3*i + j].Text = p.Who();
+                m.set(i, j, p.WhoString());
+                ArrayOfBlocks[3 * i + j].CurrentPlayer = p.Who();
 
                 Color = textblock1_1.Background;
 
                 if (m.IsWin(i, j))
                 {
-                    ArrayOfBlocks[3*i + j].Background = Brushes.Yellow;
-                    textBox.Text = "Pobijedio je: " + p.Who().ToUpper();
+                    ArrayOfBlocks[3 * i + j].Background = Brushes.Yellow;
+                    textBox.Text = "Pobijedio je: " + p.WhoString().ToUpper();
                     return;
                 }
 
                 p.ChangePlayer();
-                textBox.Text = "Na redu je: " + p.Who().ToUpper();
+                textBox.Text = "Na redu je: " + p.WhoString().ToUpper();
             }
         }
 
@@ -58,11 +53,11 @@ namespace ticTacToe
         {
             p.Reset();
             m.Reset();
-            textBox.Text = "Na redu je: " + p.Who().ToUpper();
+            textBox.Text = "Na redu je: " + p.WhoString().ToUpper();
 
             foreach (var x in ArrayOfBlocks)
             {
-                x.Text = ""; x.Background = Color;
+                x.CurrentPlayer = PlayerType.None; x.Background = Color;
             }
         }
 
@@ -76,8 +71,8 @@ namespace ticTacToe
         {
             MouseLeftButtonDownFor_i_j(0, 0);
         }
-        
-        
+
+
 
         private void textblock1_2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

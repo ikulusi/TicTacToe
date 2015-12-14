@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ticTacToe.Logic
+﻿namespace ticTacToe.Logic
 {
+    public enum PlayerType
+    {
+        None,
+        First,
+        Second
+    }
+
     public class Player
     {
         int player;
@@ -26,7 +27,13 @@ namespace ticTacToe.Logic
             player %= 2;
         }
 
-        public string Who()
+        public PlayerType Who()
+        {
+            if (player == 0) return PlayerType.First;
+            else return PlayerType.Second;
+        }
+
+        public string WhoString()
         {
             if (player == 0) return "o";
             else return "x";
