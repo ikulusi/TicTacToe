@@ -97,7 +97,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ticTacToe.Logic\ticTacToe.Logic.csproj">
+    <ProjectReference Include="ticTacToe.Logic\ticTacToe.Logic.csproj">
       <Project>{240f5310-2ac0-4da1-ab35-16be16101115}</Project>
       <Name>ticTacToe.Logic</Name>
     </ProjectReference>
